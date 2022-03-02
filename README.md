@@ -107,5 +107,6 @@ Pull():
  UML diagram is following:
  ![UML DIAGRAM](/UML1.png)
  
- ###Reference:
+ ### Reference:
+ 
  Started project by following this [blog post about creating a flask-mysql app with docker](https://stavshamir.github.io/python/dockerizing-a-flask-mysql-app-with-docker-compose/)
