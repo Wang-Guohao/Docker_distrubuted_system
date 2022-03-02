@@ -1,0 +1,130 @@
+.movie_block {
+    max-width: 500px;
+    display: flex;
+    padding-right: 20px;
+}
+
+.movie_basic {
+    width:250px;
+    flex: 1
+    grid-template-columns: 50% 50% 100% 100% 100%
+}
+
+.movie_head {
+    width:50%;
+    float:left;
+    font-size:110%
+    padding-bottom:2px;
+}
+
+.movie_poster {
+    width: 250px;
+    min-width: 250px;
+}
+
+.movie_title {
+    font-size: 200%
+}
+
+.extra_section {
+    flex: 1;
+    display:none;
+    min-width:250px;
+}
+
+input[type="checkbox"]:checked + .movie_basic + .extra_section {
+  display: inline;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.descriptor{
+    background-color:skyblue;
+    padding:0
+}
+
+.sub_descriptor{
+    align: right ;
+    position: relative;
+    font-size:110%;
+    font-weight: bold;
+}
+
+.sub_button_descr{
+    alignment: right ;
+    position: relative;
+}
+
+.sub-button{
+    min-width:75px;
+    width:75px;
+}
+
+form {
+    margin-block-end: 0em;
+}
+
+.scrolling-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+
+  .card {
+    flex: 1 0 auto;
+    min-width: 250px;
+  }
+}
+
+.notification {
+  background-color: #555;
+  color: white;
+  text-decoration: none;
+  padding: 15px 26px;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.notification:hover {
+  background: red;
+}
+
+.notification .badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+}
+
+.notification .na {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background: gray;
+  color: black;
+}
+
+.navbar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.crblock{
+    position: relative;
+    top: 25px;
+    left: 200px;
+    width:40px;
+    min-width:40px;
+    height:40px;
+    background:white;
+    border-color:red;
+    border:solid;
+}

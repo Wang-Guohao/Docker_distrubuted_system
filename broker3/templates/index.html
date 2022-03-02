@@ -1,0 +1,8 @@
+<h1>Hello World!</h1>
+
+{% if current_user.is_authenticated %}
+<div>test1: {{test_tabledata1}}</div>
+    <a href="/logout"><button>Logout</button></a>
+{% else %}
+    <a href="/login"><button>Login Here</button></a>
+{% endif %}

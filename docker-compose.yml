@@ -1,0 +1,82 @@
+version: "2"
+services:
+  app:
+    image: backend
+    build: ./app
+    ports:
+      - "5000:5000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - broker_1
+      - broker_2
+  db:
+    image: mysql:5.7
+    ports:
+      - "32000:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d/:ro
+    networks:
+      - broker_1
+
+  publisher:
+    build: ./publisher
+    ports:
+      - "5100:5100"
+    networks:
+      - broker_1
+      - broker_2
+      - broker_3
+
+  broker2:
+    build: ./broker2
+    ports:
+      - "5002:5000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - broker_1
+      - broker_2
+
+  db2:
+    image: mysql:5.7
+    ports:
+      - "32002:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+    volumes:
+      - ./db2:/docker-entrypoint-initdb.d/:ro
+    networks:
+      - broker_2
+  
+  broker3:
+    build: ./broker3
+    ports:
+      - "5003:5000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - broker_1
+      - broker_2
+      - broker_3
+
+  db3:
+    image: mysql:5.7
+    ports:
+      - "32003:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+    volumes:
+      - ./db3:/docker-entrypoint-initdb.d/:ro
+    networks:
+      - broker_3
+
+networks:
+  broker_1:
+  broker_2:
+  broker_3:
+  sub1:
+  sub2:
+  sub3:

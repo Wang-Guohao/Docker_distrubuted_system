@@ -1,0 +1,47 @@
+<HEAD> <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}"></HEAD>
+
+
+<div>
+    <div class="sub_descriptor" align="right" position="relative" >Content Rating</div>
+    {%for cr in content_rating%}
+        <div width="20px" align="right" position="relative">
+            {% if 1==content_rating[cr] %}
+                <form action="/sub/unsubscribe/cr/{{cr}}" method="POST">
+                    {{cr}} <button class="sub-button">✔</button>
+                </form>
+            {% else %}
+                <form action="/sub/subscribe/cr/{{cr}}" method="POST" topic={{cr}}>
+                    {{cr}} <button class="sub-button">Subscribe</button>
+                </form>
+            {% endif %}
+        </div>
+    {%endfor%}
+    <div class="sub_descriptor" align="right" position="relative">Genres</div>
+    {%for gr in genres%}
+        <div width="20px" align="right" position="relative">
+            {% if 1==genres[gr] %}
+                <form action="/sub/unsubscribe/gr/{{gr}}" method="POST" topic={{gr}}>
+                    {{gr}} <button class="sub-button">✔</button>
+                </form>
+            {% else %}
+                <form action="/sub/subscribe/gr/{{gr}}" method="POST" topic={{gr}}>
+                    {{gr}} <button class="sub-button">Subscribe</button>
+                </form>
+            {% endif %}
+        </div>
+    {%endfor%}
+    <div class="sub_descriptor" align="right" position="relative">Length</div>
+    {%for ln in lengths%}
+        <div width="20px" align="right" position="relative">
+            {% if 1==lengths[ln] %}
+                <form action="/sub/unsubscribe/ln/{{ln}}" method="POST" topic={{yr}}>
+                    {{ln}} <button class="sub-button">✔</button>
+                </form>
+            {% else %}
+                <form action="/sub/subscribe/ln/{{ln}}" method="POST" topic={{yr}}>
+                    {{ln}} <button class="sub-button">Subscribe</button>
+                </form>
+            {% endif %}
+        </div>
+    {%endfor%}
+</div>

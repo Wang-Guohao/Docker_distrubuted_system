@@ -1,0 +1,21 @@
+<HEAD> <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}"></HEAD>
+
+{%for movie in movie_list%}
+<div class="movie_block" id="movie['id]">
+    <input type="checkbox" id={{movie['id']}}>
+    <div class="movie_basic">
+        <div class="movie_head">{{movie['year']}}</div><div class="movie_head" float="right">{{movie['runtimeMins']}} mins</div>
+        <div ><img src={{movie['image']}} width="250px" alt="{{title}} Poster"></img></div>
+        <div class="movie_title">{{movie['title']}}</div>
+        <div >{{movie['genres']}}</div>
+    </div>
+    <div class="extra_section" for={{movie['id']}}>
+        <div class="descriptor">Plot:</div>
+        <div>{{movie['plot']}}</div>
+        <div class="descriptor">Directors:</div>
+        <div >{{movie['directors']}}</div>
+        <div class="descriptor">Stars:</div>
+        <div >{{movie['stars']}}</div>
+    </div>
+</div>
+{%endfor%}

@@ -1,0 +1,51 @@
+.movie_block {
+    max-width: 500px;
+    display: flex;
+}
+
+.movie_basic {
+    width:250px;
+    flex: 1
+    grid-template-columns: 50% 50% 100% 100% 100%
+}
+
+.movie_head {
+    width:50%;
+    float:left;
+    font-size:110%
+    padding-bottom:2px;
+}
+
+.movie_title {
+    font-size: 200%
+}
+
+.extra_section {
+    flex: 1;
+}
+
+.descriptor{
+    background-color:skyblue;
+    padding:0
+}
+
+.sub_descriptor{
+    align: right ;
+    position: relative;
+    font-size:110%;
+    font-weight: bold;
+}
+
+.sub_button_descr{
+    alignment: right ;
+    position: relative;
+}
+
+.sub-button{
+    min-width:75px;
+    width:75px;
+}
+
+form {
+    margin-block-end: 0em;
+}

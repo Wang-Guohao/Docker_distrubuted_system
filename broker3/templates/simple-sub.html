@@ -1,0 +1,18 @@
+<HEAD> <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}"></HEAD>
+
+<form action="/subscribe" method="POST">
+    <div>
+        <div class="sub_descriptor" >Subscriptions</div>
+        {%for sub in subscriptions%}
+            <div width="20px" align="right" position="relative">{{cr}}
+                {% if 1==subscriptions[sub] %}
+                    <a action="/unsubscribe/content_rating/cr" method="POST" ><button class="sub-button">✔</button></a>
+                {% else %}
+                    <a action="/subscribe/genres/cr" method="POST"><button class="sub-button">Subscribe</button></a>
+                {% endif %}
+            </div>
+        {%endfor%}
+        </div>
+    </div>
+
+</form>

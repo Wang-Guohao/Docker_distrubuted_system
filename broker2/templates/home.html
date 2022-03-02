@@ -1,0 +1,17 @@
+<h1>Hello World!</h1>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    <li>{{ message }}</li>
+    </ul>
+  {% endif %}
+{% endwith %}
+
+{% if 1==authenticated %}
+    <h3>(also hello, {{current_user}}!)</h3>
+    <a href="/logout"><button>Logout</button></a>
+{% else %}
+    <h3>(welcome, unknown user.)</h3>
+    <a href="/login"><button>Login Here</button></a>
+{% endif %}

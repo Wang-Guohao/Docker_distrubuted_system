@@ -1,0 +1,37 @@
+<h1>Hello World!</h1>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    <li>{{ message }}</li>
+    </ul>
+  {% endif %}
+{% endwith %}
+
+{% if 1==authenticated %}
+    <h3>(also hello, {{current_user}}!)</h3>
+    <div class="navbar">
+        <a href="/userchannel"><button>User's Personal Channel</button></a>
+        <a href="/subscribe_new"><button>Manage Subscriptions</button></a>
+        <a href="/logout"><button>Logout</button></a>
+        <form action="/pull" method="GET">
+            {% if 0!=ecount %}
+                <a href="#" class="notification">
+                  <span>Updates</span>
+                  <span class="badge">{{ecount}}</span>
+                </a>
+            {% else %}
+                <a href="#" class="notification">
+                  <span>Updates</span>
+                  <span class="na">0</span>
+                </a>
+            {% endif %}
+        </form>
+    </div>
+{% else %}
+    <h3>(welcome, unknown user.)</h3>
+    <a href="/login"><button>Login Here</button></a>
+{% endif %}
+
+<a href="/movielist"><button>All Movies</button></a>
+
