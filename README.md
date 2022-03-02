@@ -1,5 +1,3 @@
-Started project by following this [blog post about creating a flask-mysql app with docker](https://stavshamir.github.io/python/dockerizing-a-flask-mysql-app-with-docker-compose/)
-
 ## Deployment and Usage:
 
 Start the project by entering the project root through a terminal.
@@ -108,3 +106,6 @@ Pull():
  
  UML diagram is following:
  ![UML DIAGRAM](/UML1.png)
+ 
+ ###Reference:
+ Started project by following this [blog post about creating a flask-mysql app with docker](https://stavshamir.github.io/python/dockerizing-a-flask-mysql-app-with-docker-compose/)
